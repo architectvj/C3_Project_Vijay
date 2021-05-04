@@ -66,4 +66,19 @@ public class Restaurant {
         return name;
     }
 
+    public int getTotalSpending(ArrayList <String> menuItems) {
+
+        int total_spending = 0;
+        int price = 0;
+        for(int i = 0; i < menuItems.size(); i++)
+        {
+            Item getPriceByItemName = findItemByName(menuItems.get(i));
+            price = getPriceByItemName.getItemPrice();
+            total_spending = total_spending + price;
+
+        }
+        return total_spending;
+
+
+    }
 }
